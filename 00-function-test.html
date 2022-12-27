@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let globe = 10;
+
+        function testGlobe1() {
+            let a = "first";
+
+            // условие - вложенная область видимости
+            if (a != "") {
+                let b = "second"; // можно использовать только в условии
+                console.log(a); // доступна, так как эта область видимости вложена в ту, где создавалась переменная а
+                console.log(b);
+                console.log(globe);
+            }
+
+            console.log(a);
+            // console.log(b); // переменная b исчела после выхода из условия
+            console.log(globe);
+        }
+
+
+        testGlobe1();
+
+        function testGlobe2() {
+            let noChance = 12;
+
+            if (noChance <= 20) {
+                console.log(globe);
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
